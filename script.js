@@ -9,14 +9,11 @@ function getComputerChoice() {
     return choices[computerChoice];
 }
 
-// console.log(getComputerChoice());
-
 function getHumanChoice() {
     let userChoice = prompt("Enter your choice: ");
     return userChoice;
 }
 
-// console.log(getHumanChoice());
 
 function playRound(humanChoice, computerChoice) {
 
