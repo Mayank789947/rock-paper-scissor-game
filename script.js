@@ -52,11 +52,11 @@ function playGame() {
 }
 
 
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
+// console.log(playGame());
+// console.log(playGame());
+// console.log(playGame());
+// console.log(playGame());
+// console.log(playGame());
 
 
 function finalResult() {
