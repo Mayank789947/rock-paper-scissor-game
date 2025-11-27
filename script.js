@@ -60,22 +60,25 @@ function playGame(humanSelection) {
 
 
 function finalResult() {
-   if(computerScore === 5) {
+   if(computerScore === 1) {
      roundResult.style.display = "none";
      roundText.style.display = "none";
      finalScore.style.height = "200px";
+     finalScore.style.color = "#78E3FD";
      finalScore.textContent = "Final Result: Computer Wins!";
      btnContainer.style.display = "none";
      restartBtn.style.display = "block";
-   } else if (humanScore === 5) {
+   } else if (humanScore === 1) {
      roundResult.style.display = "none";
      roundText.style.display = "none";
      finalScore.style.height = "200px";
+     finalScore.style.color = "#78E3FD";
      finalScore.textContent = "Final Result: Player Wins!";
      btnContainer.style.display = "none";
      restartBtn.style.display = "block";
    }
 }
+
 
 buttons.forEach(button => {
     button.addEventListener("click", (e) => {
@@ -84,3 +87,6 @@ buttons.forEach(button => {
     })
 })
 
+restartBtn.addEventListener("click", () => {
+   window.location.reload();
+})
