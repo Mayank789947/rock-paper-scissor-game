@@ -1,6 +1,17 @@
 let humanScore = 0;
 let computerScore = 0;
-let round = 0;
+let round = 1;
+let roundValue = document.querySelector(".round");
+let computerScoreValue = document.querySelector(".computer-score");
+let humanScoreValue = document.querySelector(".human-score")
+let computerChoiceValue = document.querySelector(".computer-choice");
+let humanChoiceValue = document.querySelector(".human-choice");
+let roundResult = document.querySelector(".round-result");
+let roundText = document.querySelector(".round-text");
+let finalScore = document.querySelector(".final-score");
+let btnContainer = document.querySelector(".btn-container");
+let restartBtn = document.querySelector(".btn-restart");
+const buttons = document.querySelectorAll(".btn");
 
 
 function getComputerChoice() {
@@ -9,64 +20,67 @@ function getComputerChoice() {
     return choices[computerChoice];
 }
 
-function getHumanChoice() {
-    let userChoice = prompt("Enter your choice: ");
-    return userChoice;
-}
-
-
 function playRound(humanChoice, computerChoice) {
-
-    humanChoice = humanChoice.toLowerCase();
+    humanChoice = humanChoice;
     
     if (computerChoice === humanChoice) {
-       return(`Round tie! Play continue...`)
+       roundResult.textContent = `Round tie! Play continue...`;
     } else if (computerChoice === "paper" && humanChoice === "rock") {
         computerScore = ++computerScore;
-        return (`You lose! ${computerChoice} beats ${humanChoice}`);
+        roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
     } else if (computerChoice === "scissors" && humanChoice === "paper") {
         computerScore = ++computerScore;
-        return (`You lose! ${computerChoice} beats ${humanChoice}`);
+        roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
     } else if (computerChoice === "rock" && humanChoice === "scissors") {
         computerScore = ++computerScore;
-        return (`You lose! ${computerChoice} beats ${humanChoice}`);
+        roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
     } else {
         humanScore = ++humanScore;
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        roundResult.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
     }
 }
 
 
-function playGame() {
-    round++;
-
-    const humanSelection = getHumanChoice();
+function playGame(humanSelection) {
+    
     const computerSelection = getComputerChoice();
-
-    console.log(`Round: ${round}`);
+    
+    roundValue.textContent = round;
     let result = playRound(humanSelection, computerSelection);
-    console.log(`Computer Score: ${computerScore}`);
-    console.log(`Player Score: ${humanScore}`);
+    computerScoreValue.textContent = computerScore;
+    computerChoiceValue.textContent = computerSelection;
 
+    humanScoreValue.textContent = humanScore;
+    humanChoiceValue.textContent = humanSelection;
+
+    round++;
+    finalResult();
     return result;
 }
 
 
-// console.log(playGame());
-// console.log(playGame());
-// console.log(playGame());
-// console.log(playGame());
-// console.log(playGame());
-
-
 function finalResult() {
-    if (computerScore === humanScore) {
-        console.log("Final Result: Match tie. Play again");
-    } else if (computerScore > humanScore) {
-        console.log("Final Result: Computer win the match");
-    } else {
-        console.log("Final Result: Player Win the match");
-    }
+   if(computerScore === 5) {
+     roundResult.style.display = "none";
+     roundText.style.display = "none";
+     finalScore.style.height = "200px";
+     finalScore.textContent = "Final Result: Computer Wins!";
+     btnContainer.style.display = "none";
+     restartBtn.style.display = "block";
+   } else if (humanScore === 5) {
+     roundResult.style.display = "none";
+     roundText.style.display = "none";
+     finalScore.style.height = "200px";
+     finalScore.textContent = "Final Result: Player Wins!";
+     btnContainer.style.display = "none";
+     restartBtn.style.display = "block";
+   }
 }
 
-console.log(finalResult());
+buttons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        const clickedValue = e.target.value;
+        playGame(clickedValue);
+    })
+})
+
