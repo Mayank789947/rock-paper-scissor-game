@@ -10,7 +10,8 @@
 }
 
 body {
-    background-color: cadetblue;
+    background-color: #020116;
+    color: #EEF8FF;
     height: 100vh;
 }
 
@@ -57,7 +58,7 @@ body {
 }
 
 .btn-container {
-    width: 600px;
+    width: 640px;
     margin-top: 100px;
     display: flex;
     justify-content: space-between;
@@ -69,9 +70,13 @@ body {
     outline: none;
     border: none;
     border-radius: 12px;
-    background-color:rgb(14, 64, 66);
-    color: white;
+    background-color: #7D53DE;
+    color: #EEF8FF;
     cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #7d53dec7;
 }
 
 .round-result {
