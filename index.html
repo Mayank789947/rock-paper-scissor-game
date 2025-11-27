@@ -11,26 +11,27 @@
     <div class="main">
         <h2 class="final-score"></h2>
         <div class="score">
-            <p>Round: 1</p>
-            <p class="round-result"></p>
+            <p class="round-text">Round: <span class="round">1</span></p>
+            <p class="round-result">Make Your Choice</p>
             <div class="choices">
                 <div class="computer">
                     <h3>Computer</h3>
-                    <p>Choice: </p>
-                    <p>Score: </p>
+                    <p>Choice: <span class="computer-choice"></span></p>
+                    <p>Score: <span class="computer-score">0</span></p>
                 </div>
                 <div class="player">
                     <h3>Player</h3>
-                    <p>Choice: </p>
-                    <p>Score: </p>
+                    <p>Choice: <span class="human-choice"></span></p>
+                    <p>Score: <span class="human-score">0</span></p>
                 </div>
             </div>
         </div>
         <div class="btn-container">
-            <button class="btn">Rock</button>
-            <button class="btn">Paper</button>
-            <button class="btn">Scissors</button>
+            <button class="btn" value="rock">Rock</button>
+            <button class="btn" value="paper">Paper</button>
+            <button class="btn" value="scissors">Scissors</button>
         </div>
+        <button class="btn btn-restart">Restart Game</button>
     </div>
         
     <script src="script.js"></script>
