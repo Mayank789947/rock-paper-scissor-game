@@ -71,5 +71,18 @@ body {
     border-radius: 12px;
     background-color:rgb(14, 64, 66);
     color: white;
+    cursor: pointer;
 }
 
+.round-result {
+    height: 60px;
+}
+
+.final-score {
+    font-size: 60px;
+}
+
+.btn-restart {
+    margin-top: 140px;
+    display: none;
+}
