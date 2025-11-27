@@ -60,7 +60,7 @@ function playGame(humanSelection) {
 
 
 function finalResult() {
-   if(computerScore === 1) {
+   if(computerScore === 5) {
      roundResult.style.display = "none";
      roundText.style.display = "none";
      finalScore.style.height = "200px";
@@ -68,7 +68,7 @@ function finalResult() {
      finalScore.textContent = "Final Result: Computer Wins!";
      btnContainer.style.display = "none";
      restartBtn.style.display = "block";
-   } else if (humanScore === 1) {
+   } else if (humanScore === 5) {
      roundResult.style.display = "none";
      roundText.style.display = "none";
      finalScore.style.height = "200px";
